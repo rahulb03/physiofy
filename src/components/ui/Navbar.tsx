@@ -84,10 +84,10 @@ export function NavBar() {
         >
           <ul className="space-y-4 font-medium">
             <li onClick={() => setOpen(false)}>
-              <Link href="#solutions">Solutions</Link>
+              <Link href="#solutions">home</Link>
             </li>
             <li onClick={() => setOpen(false)}>
-              <Link href="#farm-management">Farm Management</Link>
+              <Link href="#farm-management">solutions</Link>
             </li>
             <li onClick={() => setOpen(false)}>
               <Link href="#solar-analytics">Analytics</Link>
