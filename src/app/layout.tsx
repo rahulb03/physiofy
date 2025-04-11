@@ -5,6 +5,7 @@ import "./globals.css"
 import Footer from "@/components/ui/Footer"
 import { NavBar } from "@/components/ui/Navbar"
 import { siteConfig } from "./siteConfig"
+import { Toaster } from "sonner"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yoururl.com"),
@@ -48,6 +49,8 @@ export default function RootLayout({
         className={`${GeistSans.className} min-h-screen overflow-x-hidden scroll-auto bg-gray-50 antialiased selection:bg-orange-100 selection:text-orange-600`}
       >
         <NavBar />
+        <Toaster position="top-center" richColors closeButton />
+
         {children}
         <Footer />
       </body>

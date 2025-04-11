@@ -1,69 +1,121 @@
 import {
-  RiGithubFill,
-  RiSlackFill,
-  RiTwitterXFill,
-  RiYoutubeFill,
+  // RiGithubFill,
+  // RiSlackFill,
+  // RiTwitterXFill,
+  // RiYoutubeFill,
+  RiWhatsappFill,
+  RiInstagramFill
 } from "@remixicon/react"
 import Link from "next/link"
-import { SolarLogo } from "../../../public/SolarLogo"
+import Image from "next/image"
+import logo from "../../../public/physiofy.svg"
 const CURRENT_YEAR = new Date().getFullYear()
 
+
 const Footer = () => {
+  // const sections = {
+  //   solutions: {
+  //     title: "Solutions",
+  //     items: [
+  //       { label: "Crop Monitoring", href: "#contact" },
+  //       { label: "Irrigation Control", href: "#contact" },
+  //       { label: "Soil Analytics", href: "#contact" },
+  //       { label: "Weather Integration", href: "#contact" },
+  //       { label: "Documentation", href: "#contact" },
+  //       { label: "Smart Farming Guide", href: "#contact" },
+  //       { label: "Equipment", href: "#contact" },
+  //     ],
+  //   },
+  //   company: {
+  //     title: "Company",
+  //     items: [
+  //       { label: "About us", href: "#contact" },
+  //       { label: "Blog", href: "#contact" },
+  //       { label: "Careers", href: "#contact" },
+  //       { label: "Success Stories", href: "#contact" },
+  //       { label: "Sustainability", href: "#contact" },
+  //     ],
+  //   },
+  //   resources: {
+  //     title: "Resources",
+  //     items: [
+  //       { label: "Farmer Network", href: "#contact" },
+  //       {
+  //         label: "Community",
+  //         href: "#contact",
+  //         external: true,
+  //       },
+  //       { label: "Contact", href: "#contact" },
+  //       { label: "Support", href: "#contact" },
+  //       { label: "Privacy Policy", href: "#contact" },
+  //       { label: "Terms of Service", href: "#contact" },
+  //       { label: "Report an Issue", href: "#contact" },
+  //     ],
+  //   },
+  //   partners: {
+  //     title: "Partners",
+  //     items: [
+  //       { label: "Dealer Network", href: "#contact", external: true },
+  //       { label: "System Status", href: "#contact", external: true },
+  //       { label: "Research Partners", href: "#contact", external: true },
+  //       { label: "Integration Guide", href: "#contact" },
+  //     ],
+  //   },
+  // }
+
   const sections = {
-    solutions: {
-      title: "Solutions",
-      items: [
-        { label: "Crop Monitoring", href: "#" },
-        { label: "Irrigation Control", href: "#" },
-        { label: "Soil Analytics", href: "#" },
-        { label: "Weather Integration", href: "#" },
-        { label: "Documentation", href: "#" },
-        { label: "Smart Farming Guide", href: "#" },
-        { label: "Equipment", href: "#" },
-      ],
-    },
+    // services: {
+    //   title: "Services",
+    //   items: [
+    //     { label: "AI-Powered Virtual Therapy", href: "#contact" },
+    //     { label: "In-Person Physiotherapy", href: "#contact" },
+    //     { label: "Pain Management Programs", href: "#contact" },
+    //     { label: "Post-Surgery Rehab", href: "#contact" },
+    //     { label: "Elderly Care Therapy", href: "#contact" },
+    //     { label: "Sports Injury Recovery", href: "#contact" },
+    //     { label: "Chronic Condition Support", href: "#contact" },
+    //   ],
+    // },
     company: {
-      title: "Company",
+      title: "Our Links",
       items: [
-        { label: "About us", href: "#" },
-        { label: "Blog", href: "#" },
-        { label: "Careers", href: "#" },
-        { label: "Success Stories", href: "#" },
-        { label: "Sustainability", href: "#" },
+        { label: "Home", href: "#home" },
+        { label: "Solution", href: "#solution" },
+        { label: "Contact", href: "#contact" },
+        // { label: "Testimonials", href: "#contact" },
+        // { label: "Contact", href: "#contact" },
       ],
     },
     resources: {
       title: "Resources",
       items: [
-        { label: "Farmer Network", href: "#" },
-        {
-          label: "Community",
-          href: "#",
-          external: true,
-        },
-        { label: "Contact", href: "#" },
-        { label: "Support", href: "#" },
-        { label: "Privacy Policy", href: "#" },
-        { label: "Terms of Service", href: "#" },
-        { label: "Report an Issue", href: "#" },
+        { label: "Help Center", href: "#contact" },
+        { label: "FAQs", href: "#contact" },
+        { label: "Privacy Policy", href: "#contact" },
+        { label: "Terms of Service", href: "#contact" },
+        { label: "Report an Issue", href: "#contact" },
       ],
     },
-    partners: {
-      title: "Partners",
+    services: {
+      title: "Services",
       items: [
-        { label: "Dealer Network", href: "#", external: true },
-        { label: "System Status", href: "#", external: true },
-        { label: "Research Partners", href: "#", external: true },
-        { label: "Integration Guide", href: "#" },
+        { label: "AI-Powered Virtual Therapy", href: "#contact" },
+        { label: "In-Person Physiotherapy", href: "#contact" },
+        { label: "Pain Management Programs", href: "#contact" },
+        { label: "Post-Surgery Rehab", href: "#contact" },
+        { label: "Elderly Care Therapy", href: "#contact" },
+        { label: "Sports Injury Recovery", href: "#contact" },
+        { label: "Chronic Condition Support", href: "#contact" },
       ],
     },
-  }
+  };
+  
 
   return (
     <div className="px-4 xl:px-0">
       <footer
         id="footer"
-        className="relative mx-auto flex max-w-6xl flex-wrap pt-4"
+        className="relative mx-auto flex max-w-6xl px-1 flex-wrap pt-4"
       >
         {/* Vertical Lines */}
         <div className="pointer-events-none inset-0">
@@ -138,7 +190,7 @@ const Footer = () => {
             stroke="none"
             width="100%"
             height="100%"
-            fill="url(#diagonal-footer-pattern)"
+            fill="url(#contactdiagonal-footer-pattern)"
           />
         </svg>
         <div className="mr-auto flex w-full justify-between lg:w-fit lg:flex-col">
@@ -146,32 +198,37 @@ const Footer = () => {
             href="/"
             className="flex items-center font-medium text-gray-700 select-none sm:text-sm"
           >
-            <SolarLogo className="ml-2 w-20" />
+            <Image
+              src={logo}
+              alt="Solar Logo"
+              className="h-12 w-auto"
+              priority
+              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+              />
 
-            <span className="sr-only">Solar Logo (go home)</span>
           </Link>
 
           <div>
             <div className="mt-4 flex items-center">
               {/* Social Icons */}
               <Link
-                href="#"
+                href="https://www.instagram.com/officialphysiofy/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
               >
-                <RiTwitterXFill className="size-5" />
+                <RiInstagramFill className="size-5" />
               </Link>
               <Link
-                href="#"
+                href="https://api.whatsapp.com/send/?phone=916353295389&text=Try%20AI-Powered%20Personalized%20Physio&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
               >
-                <RiYoutubeFill className="size-5" />
+                <RiWhatsappFill className="size-5" />
               </Link>
-              <Link
-                href="#"
+              {/* <Link
+                href="#contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
@@ -179,16 +236,16 @@ const Footer = () => {
                 <RiGithubFill className="size-5" />
               </Link>
               <Link
-                href="#"
+                href="#contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
               >
                 <RiSlackFill className="size-5" />
-              </Link>
+              </Link> */}
             </div>
             <div className="ml-2 hidden text-sm text-gray-700 lg:inline">
-              &copy; {CURRENT_YEAR} Solar Technologies, Inc.
+              &copy; {CURRENT_YEAR} Physiofy.
             </div>
           </div>
         </div>

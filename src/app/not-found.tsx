@@ -2,15 +2,24 @@ import { Button } from "@/components/Button"
 import Link from "next/link"
 import { siteConfig } from "./siteConfig"
 
-import { SolarLogo } from "../../public/SolarLogo"
+// import { SolarLogo } from "../../public/SolarLogo"
+import Image from "next/image"
+import logo from "../../public/physio.svg"
 
 export default function NotFound() {
   return (
     <div className="flex h-screen flex-col items-center justify-center">
       <Link href={siteConfig.baseLinks.home}>
-        <SolarLogo className="mt-6 h-10" />
+        {/* <span className="sr-only">Solar Tech Logo</span> */}
+        <Image
+          src={logo}
+          alt="Solar Tech Logo"
+          className="h-12 w-auto"
+          priority
+          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+        />
       </Link>
-      <p className="mt-6 text-4xl font-semibold text-amber-600 sm:text-5xl">
+      <p className="mt-6 text-4xl font-semibold text-theme sm:text-5xl">
         Error 404
       </p>
       <h1 className="mt-4 text-2xl font-semibold text-gray-900">
